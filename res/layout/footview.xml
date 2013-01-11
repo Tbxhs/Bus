@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_bg"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/layout0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dip"
+        android:layout_marginRight="40dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_menu0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/menu_home" >
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dip"
+        android:layout_marginRight="40dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_menu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/menu_list" >
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dip"
+        android:layout_marginRight="40dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_menu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/menu_back" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

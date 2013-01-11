@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="#fcfaf1">
+
+	<include layout="@layout/top_view" android:id="@+id/top" />
+
+	<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:id="@+id/ad" android:layout_below="@+id/top"
+		android:layout_centerInParent="true">
+		<ImageView android:id="@+id/adview"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<ImageView android:src="@drawable/ad_delete" android:id="@+id/ad_delete"
+			android:adjustViewBounds="true" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_x="258sp"
+			android:layout_y="80sp" />
+	</AbsoluteLayout>
+
+	<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/gridview" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:numColumns="auto_fit"
+		android:verticalSpacing="10dp" android:horizontalSpacing="10dp"
+		android:columnWidth="90dp" android:stretchMode="columnWidth"
+		android:gravity="center" android:layout_above="@+id/InvisiblefootView"
+		android:layout_below="@+id/ad" android:layout_marginTop="20dip" />
+
+	<LinearLayout android:id="@+id/InvisiblefootView"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true">
+		<include layout="@layout/footview2" />
+	</LinearLayout>
+</RelativeLayout>
