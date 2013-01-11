@@ -177,11 +177,6 @@ public class MainActivity extends BaseActivity {
 		item.put("ItemText", "周边生活");
 		imageItemList.add(item);
 		
-//		item = new HashMap<String, Object>();
-//		item.put("ItemImage", R.drawable.exchange_city);
-//		item.put("ItemText", "城市切换");
-//		imageItemList.add(item);
-		
 		item = new HashMap<String, Object>();
 		item.put("ItemImage", R.drawable.feedback);
 		item.put("ItemText", "意见反馈");
@@ -213,7 +208,7 @@ public class MainActivity extends BaseActivity {
 					startActivity(searchStation);
 					return;
 				case 3:
-					Intent searchRealTime = new Intent(MainActivity.this,SearchRealTimeActivity.class);
+					Intent searchRealTime = new Intent(MainActivity.this,SearchRealTime2Activity.class);
 					startActivity(searchRealTime);
 					return;
 				case 4:

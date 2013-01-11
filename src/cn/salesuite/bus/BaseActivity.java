@@ -34,7 +34,7 @@ public class BaseActivity extends SAFActivity{
 	protected ProgressDialog mProgressDialog;
 	
 	public static String MAIN_ACTIVITY = "cn.salesuite.bus.activity.MainActivity";
-	public static String REAL_TIME_ACTIVITY = "cn.salesuite.bus.activity.SearchRealTimeActivity";
+	public static String REAL_TIME_ACTIVITY = "cn.salesuite.bus.activity.SearchRealTime2Activity";
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

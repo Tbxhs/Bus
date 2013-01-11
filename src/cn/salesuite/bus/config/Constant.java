@@ -70,6 +70,9 @@ public class Constant {
 	// 公交车接口地址
 	public static final String GET_BUS_STATUS = "http://202.102.101.74:17016/Service.asmx/GetCarStatus";
 	
+	// 公交车实时情况h5地址
+	public static final String BUS_REAL_TIME_H5 = "http://124.74.19.103:8090/BusSys/list/list2.jsp";
+	
 	public static List<BusStation> getWanZhouBusLine() {
 		List<BusStation> stations = new ArrayList<BusStation>();
 		BusStation station1 = new BusStation();

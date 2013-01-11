@@ -62,7 +62,7 @@ public class RealTimeItemListActivity extends BaseActivity{
 				if (arg2 == 0) {
 					showToast("当前无公交线路更新!");
 				} else if (arg2 == 1) {
-					Intent i = new Intent(RealTimeItemListActivity.this,SearchRealTimeActivity.class);
+					Intent i = new Intent(RealTimeItemListActivity.this,SearchRealTime2Activity.class);
 					startActivity(i);
 					finish();
 				}
