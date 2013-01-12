@@ -5,6 +5,7 @@ package cn.salesuite.bus.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
@@ -12,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.webkit.WebSettings.RenderPriority;
 import cn.salesuite.bus.BaseActivity;
 import cn.salesuite.bus.config.Constant;
+import cn.salesuite.saf.utils.SAFUtil;
 
 /**
  * 用html5实现实时公交线路
@@ -27,13 +29,23 @@ public class SearchRealTime2Activity extends BaseActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.search_real_time2);
-
-		final String website = Constant.BUS_REAL_TIME_H5;
 		
-		webView = (WebView) findViewById(R.id.webview);
+		if (!SAFUtil.checkNetworkStatus(this)) {
+			showToast("当前无网络,请稍后再试!");
+		} else {
+			findViews();
+			initViews();
+			initData();
+		}
 		
 		addFootMenuView();
-		
+	}
+	
+	private void findViews() {
+		webView = (WebView) findViewById(R.id.webview);
+	}
+
+	private void initViews() {
 		webView.setWebViewClient(new WebViewClient(){
 			public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event){				
 				
@@ -54,7 +66,6 @@ public class SearchRealTime2Activity extends BaseActivity{
 			}
 			
 		});
-		dialog = ProgressDialog.show(this,"请稍后", "正在加载网页...",true);
 		
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.setInitialScale(100);
@@ -72,12 +83,18 @@ public class SearchRealTime2Activity extends BaseActivity{
 				}
 			}
 		});
+	}
+
+	private void initData() {
+		String website = Constant.BUS_REAL_TIME_H5;
+		dialog = ProgressDialog.show(this,"请稍后", "正在加载网页...",true);
 		webView.loadUrl(website);
 	}
-	
+
 	@Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
     	if (keyCode == KeyEvent.KEYCODE_BACK) {
+    		finish();
     		return false;
     	}
     	return super.onKeyDown(keyCode, event);
@@ -85,7 +102,9 @@ public class SearchRealTime2Activity extends BaseActivity{
 	
 	protected void onDestroy() {
 		super.onDestroy();
-		webView.removeAllViews();
-		webView.destroy();
+		if (webView!=null) {
+			webView.removeAllViews();
+			webView.destroy();
+		}
 	}
 }
